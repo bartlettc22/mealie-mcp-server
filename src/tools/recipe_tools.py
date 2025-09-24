@@ -124,7 +124,7 @@ def register_recipe_tools(mcp: FastMCP, mealie: MealieFetcher) -> None:
     @mcp.tool()
     def create_recipe(
         name: str, ingredients: list[str], instructions: list[str]
-    ) -> str:
+    ) -> Dict[str, Any]:
         """Create a new recipe
 
         Args:
@@ -158,7 +158,7 @@ def register_recipe_tools(mcp: FastMCP, mealie: MealieFetcher) -> None:
         slug: str,
         ingredients: list[str],
         instructions: list[str],
-    ) -> str:
+    ) -> Dict[str, Any]:
         """Replaces the ingredients and instructions of an existing recipe.
 
         Args:
