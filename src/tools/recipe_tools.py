@@ -1,6 +1,6 @@
 import logging
 import traceback
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 from mcp.server.fastmcp import FastMCP
 
