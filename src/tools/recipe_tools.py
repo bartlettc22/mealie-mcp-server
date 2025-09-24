@@ -21,7 +21,7 @@ def register_recipe_tools(mcp: FastMCP, mealie: MealieFetcher) -> None:
         per_page: Optional[int] = None,
         categories: Optional[List[str]] = None,
         tags: Optional[List[str]] = None,
-    ) -> str:
+    ) -> Dict[str, Any]:
         """Provides a paginated list of recipes with optional filtering.
 
         Args:
@@ -61,7 +61,7 @@ def register_recipe_tools(mcp: FastMCP, mealie: MealieFetcher) -> None:
             return format_error_response(error_msg)
 
     @mcp.tool()
-    def get_recipe_detailed(slug: str) -> str:
+    def get_recipe_detailed(slug: str) -> Dict[str, Any]:
         """Retrieve a specific recipe by its slug identifier. Use this when to get full recipe
         details for tasks like updating or displaying the recipe.
 
@@ -85,7 +85,7 @@ def register_recipe_tools(mcp: FastMCP, mealie: MealieFetcher) -> None:
             return format_error_response(error_msg)
 
     @mcp.tool()
-    def get_recipe_concise(slug: str) -> str:
+    def get_recipe_concise(slug: str) -> Dict[str, Any]:
         """Retrieve a concise version of a specific recipe by its slug identifier. Use this when you only
         need a summary of the recipe, such as for when mealplaning.
 
